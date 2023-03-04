@@ -8,10 +8,10 @@ export interface Item {
 }
 
 const inventory: Item[] = [
-  {productName: 'Apples', quantity: 15, quantityType: 'Whole Number', status: 13},
-  {productName: 'Oranges', quantity: 12, quantityType: 'Whole Number', status: 10},
-  {productName: 'Flour', quantity: 130, quantityType: 'g', status: 14},
-  {productName: 'Potatoes', quantity: 3, quantityType: 'Whole Number', status: 12},
+  {productName: 'Apples', quantity: 15, quantityType: 'Whole Number', status: 1},
+  {productName: 'Oranges', quantity: 12, quantityType: 'Whole Number', status: .5},
+  {productName: 'Flour', quantity: 130, quantityType: 'g', status: .25},
+  {productName: 'Potatoes', quantity: 3, quantityType: 'Whole Number', status: .75},
 ];
 
 
