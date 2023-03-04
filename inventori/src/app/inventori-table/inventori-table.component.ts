@@ -14,6 +14,8 @@ const inventory: Item[] = [
   {productName: 'Potatoes', quantity: 3, quantityType: 'Whole Number', status: 12},
 ];
 
+
+
 @Component({
   selector: 'app-inventori-table',
   templateUrl: './inventori-table.component.html',
@@ -22,4 +24,13 @@ const inventory: Item[] = [
 export class InventoriTableComponent {
   displayedColumns: string[] = ['productName', 'quantity', 'quantityType', 'status', 'add', 'use'];
   dataSource = inventory;
+
+  openAddModal = (item: any) => {
+    console.log(`Adding to the item ${item.productName}`);
+  };
+
+  openUseModal = (item: any) => {
+    console.log(`Adding to the item ${item.productName}`);
+  };
 }
+
