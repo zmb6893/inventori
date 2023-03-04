@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InventoriTableComponent } from './inventori-table/inventori-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StatusBarComponent } from './status-bar/status-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InventoriTableComponent
+    InventoriTableComponent,
+    StatusBarComponent
   ],
   imports: [
     BrowserModule,
