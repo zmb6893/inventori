@@ -1,0 +1,65 @@
+h1 {
+    font-family: Dosis, sans-serif;
+    font-weight: 600;
+    color: #006400;
+}
+
+.input-table {
+    padding: 0 25px;
+    margin-bottom: 3rem;
+}
+
+.item-inputs {
+    display: grid;
+}
+
+#item-name {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 1rem;
+}
+
+#item-quantity {
+    grid-column: 1;
+}
+
+#item-units {
+    grid-column: 2;
+}
+
+input {
+    border: 0;
+    border-bottom: 1px solid black;
+    margin: 0 0.75rem 1.5rem 0;
+}
+
+.submission-btns {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+#cancel-btn, #save-btn {
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    margin: 0 0.5rem;
+}
+
+#save-btn {
+    background-color: #006400;
+    color: white;
+    font-family: "Dosis", sans-serif;
+    font-size: 1rem;
+    border-radius: 1.25rem;
+    padding: .5rem 1.2rem;
+}
+
+#cancel-btn {
+    color: #006400;
+    background-color: white;
+    font-family: "Dosis", sans-serif;
+    font-size: 1rem;
+    border: 0.5px solid #006400;
+    border-radius: 1.25rem;
+    padding: .5rem .75rem;
+}

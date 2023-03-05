@@ -1,1 +1,9 @@
 /* We need to add our css here */
+#add-item {
+    background-color: #006400;
+    color: white;
+    font-family: "Dosis", sans-serif;
+    font-size: 1rem;
+    border-radius: 1.25rem;
+    padding: .5rem 1.2rem;
+}

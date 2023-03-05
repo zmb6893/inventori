@@ -1,0 +1,3 @@
+<progress 
+[ngClass]="{'high-stock': item.quantity>item.limit, 'medium-stock':item.quantity==item.limit, 'low-stock':item.quantity<item.limit}"
+    id="health" value="{{item.status}}" max="1"></progress>
