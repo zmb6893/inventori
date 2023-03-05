@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 import { Item } from './inventori-table/inventori-table.component';
-const fs = require("fs");
-const { stringify } = require("csv-stringify");
-const db = require("./db");
-
 
 @Component({
   selector: 'app-root',
@@ -15,15 +11,18 @@ export class AppComponent {
   productInfoList: Item[] = [];
 
   ngOnInit = () => {
-    // Load the csv info from the file.
-    const filename = "inventori/src/assets/inventoryInfo.csv"
-    const writableStream = fs.createWriteStream(filename);
-    const columns = [
-      "productName",
-      "initialQuantity",
-      "currentQuantity",
-      "quantityType"
-    ];
-    
+    let request = new Request("http://localhost:3000/product-list");
+    fetch(request).then(response => {
+      // response.forEach(element => {
+      //   let productInfo: Item = {
+      //     'productName': element.productName,
+      //     'quantity': Number(element.currentQuantity),
+      //     'quantityType': element.quantityType,
+      //     'status': element.currentQuantity / element.initialQuantity,
+      //   }
+      //   console.log(productInfo);
+      // });
+      console.log(response);
+    });
   }
 }
