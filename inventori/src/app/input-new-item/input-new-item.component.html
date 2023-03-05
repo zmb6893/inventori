@@ -23,6 +23,9 @@
                             <option>individual item</option>
                         </select>
                     </div>
+                    <div *ngIf="weight">
+                        <p>A weight of {{weight}} grams was recorded</p>
+                    </div>
                     <input type="text" id="itemLimit" placeholder="Item Limit">
                 </div>
 
@@ -36,5 +39,5 @@
 </div>
 
 <div *ngIf="useScale">
-    <app-weight-confirmation></app-weight-confirmation>      
+    <app-weight-confirmation (weightEmitter)="newWeight($event)"></app-weight-confirmation>      
 </div>

@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class InputNewItemComponent {
   showingInputItemBox: boolean = true;
   useScale: boolean = false;
+  weight: Number = 0;
 
   exitInputItemBox = () => {
     this.showingInputItemBox=false;
@@ -23,11 +24,12 @@ export class InputNewItemComponent {
   submitForm = () => {
     let test = {
       productName: (<HTMLInputElement>document.getElementById("itemName")).value,
-      currentQuantity: Number((<HTMLInputElement>document.getElementById("itemQuantity")).value),
-      initialQuantity: Number((<HTMLInputElement>document.getElementById("itemQuantity")).value),
+      currentQuantity: this.weight ? this.weight : Number((<HTMLInputElement>document.getElementById("itemQuantity")).value),
+      initialQuantity: this.weight ? this.weight : Number((<HTMLInputElement>document.getElementById("itemQuantity")).value),
       limit: Number((<HTMLInputElement>document.getElementById("itemLimit")).value),
     }
 
+    console.log(test);
 
     fetch(new Request("http://localhost:3000/add-product"), {
       "method": "POST",
@@ -37,5 +39,10 @@ export class InputNewItemComponent {
       "body": JSON.stringify(test)
     });
 
+  }
+
+  newWeight = (weight: Number) => {
+    this.weight = weight;
+    console.log(this.weight)
   }
 }
