@@ -2,3 +2,4 @@ productName,initialQuantity,currentQuantity,quantityType,limit
 salt, 10, 10, grams, 2
 pepper, 12, 2, grams, 2
 mushrooms, 5, 3, count, 4
+onion,1,1,1
