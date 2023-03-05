@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-weight-confirmation',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class WeightConfirmationComponent {
   weight: number = 0;
+  @Output() weightEmitter = new EventEmitter<Number>();
   showingWeightBox: boolean = true;
   getWeightClicked: boolean = false;
 
@@ -23,6 +24,11 @@ export class WeightConfirmationComponent {
       console.log(json.value);
       this.getWeightClicked = false;
     });
+  }
+
+  submitWeight = () => {
+    this.showingWeightBox=false;
+    this.weightEmitter.emit(this.weight);
   }
   
 }

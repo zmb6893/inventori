@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class InputNewItemComponent {
   showingInputItemBox: boolean = true;
   useScale: boolean = false;
+  weight: Number = 0;
 
   exitInputItemBox = () => {
     this.showingInputItemBox=false;
@@ -37,5 +38,10 @@ export class InputNewItemComponent {
       "body": JSON.stringify(test)
     });
 
+  }
+
+  newWeight = (weight: Number) => {
+    this.weight = weight;
+    console.log(this.weight)
   }
 }
