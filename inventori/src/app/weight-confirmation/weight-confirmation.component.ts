@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faX } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-weight-confirmation',
@@ -9,6 +10,9 @@ export class WeightConfirmationComponent {
   weight: number = 0;
   showingWeightBox: boolean = true;
   getWeightClicked: boolean = false;
+
+  //icons
+  faX = faX;
 
   exitWeightBox = () => {
     this.showingWeightBox=false;

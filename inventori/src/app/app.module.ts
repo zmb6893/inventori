@@ -11,6 +11,7 @@ import { WeightConfirmationComponent } from './weight-confirmation/weight-confir
 import { MatCardModule } from "@angular/material/card";
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; 
 import { InputNewItemComponent } from './input-new-item/input-new-item.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { InputNewItemComponent } from './input-new-item/input-new-item.component
     MatCardModule,
     MatProgressSpinnerModule,
     BrowserAnimationsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
