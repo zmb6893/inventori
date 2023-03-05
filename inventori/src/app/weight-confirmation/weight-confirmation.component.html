@@ -4,8 +4,9 @@
             <button (click)="exitWeightBox()">x</button>
         </div>
         <mat-card-content>
-            <div style="text-align: center;">
+            <div style="text-align: center; align-items: center; margin:auto">
                 <h1>{{ weight ? "Weight is " : "Weighing..."}}</h1>
+                <div style="max-width: fit-content; margin:auto;"><mat-spinner *ngIf="!weight && getWeightClicked"></mat-spinner></div>
                 <h3>{{ weight }}</h3>
                 <button (click)="getWeight()">Get Weight</button>
                 <br><br>

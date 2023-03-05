@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StatusBarComponent } from './status-bar/status-bar.component';
 import { WeightConfirmationComponent } from './weight-confirmation/weight-confirmation.component';
 import { MatCardModule } from "@angular/material/card";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; 
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MatCardModule } from "@angular/material/card";
     AppRoutingModule,
     MatTableModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     BrowserAnimationsModule,
   ],
   providers: [],
