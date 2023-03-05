@@ -28,15 +28,13 @@
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
-<<<<<<< Updated upstream
-            "scripts": []
-=======
             "scripts": [
+              "node_modules/chart.js/dist/chart.js",
+              "node_modules/chart.js/dist/chart.js",
               "node_modules/chart.js/dist/chart.js",
               "node_modules/chart.js/dist/chart.js",
               "node_modules/chart.js/dist/chart.js"
             ]
->>>>>>> Stashed changes
           },
           "configurations": {
             "production": {
