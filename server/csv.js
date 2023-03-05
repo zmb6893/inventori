@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { stringify } = require("csv-stringify");
 const csvToJson = require('convert-csv-to-json');
 
 const filename = '../data.csv';
@@ -8,6 +7,16 @@ function getAllRows(){
     return csvToJson.fieldDelimiter(',').getJsonFromCsv(filename);
 }
 
-console.log(getAllRows());
+function addRow(data){
+    console.log(data);
+    let csvString = data["productName"] + "," +  data["currentQuantity"] + "," + data["initialQuantity"] + "," + data["limit"];
+    fs.appendFile(filename, '\n' + csvString, function(err) {
+        if (err){
+            console.error(err);
+        }else{
+            console.log("Added new item");
+        }
+    });
+}
 
-module.exports = { getAllRows };
+module.exports = { getAllRows, addRow };

@@ -29,21 +29,6 @@ export class InventoriTableComponent {
   dataSource : Item[] = inventory;
 
   ngOnInit(){
-    console.log(this.products.length);
-    for (let i: number = 0; i < this.products.length; i++){
-      console.log(this.products[i]);
-    }
-  
-    // this.products.forEach(i => {
-    //   console.log(i);
-    //   this.dataSource.push({
-    //     productName: i.productName, 
-    //     quantity: i.currentQuantity, 
-    //     quantityType: i.quantityType, 
-    //     status: i.currentQuantity / i.initialQuantity,
-    //   });
-    // })
-    // console.log(this.dataSource);
   }
 
   openAddModal = (item: any) => {

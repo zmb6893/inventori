@@ -21,20 +21,21 @@ export class InputNewItemComponent {
 
   // send in body, header application/json
   submitForm = () => {
-    let body = {
+    let test = {
       productName: (<HTMLInputElement>document.getElementById("itemName")).value,
-      currentQuantity: (<HTMLInputElement>document.getElementById("itemQuantity")).value,
-      initialQuantity: (<HTMLInputElement>document.getElementById("itemQuantity")).value,
-      limit: (<HTMLInputElement>document.getElementById("itemLimit")).value,
+      currentQuantity: Number((<HTMLInputElement>document.getElementById("itemQuantity")).value),
+      initialQuantity: Number((<HTMLInputElement>document.getElementById("itemQuantity")).value),
+      limit: Number((<HTMLInputElement>document.getElementById("itemLimit")).value),
     }
 
-    fetch("http://localhost:3000/add-product", {
+
+    fetch(new Request("http://localhost:3000/add-product"), {
       "method": "POST",
       "headers": {
         'Content-Type': "application/json"
       },
-      "body": JSON.stringify(body)
-    })
-    console.log(body);
+      "body": JSON.stringify(test)
+    });
+
   }
 }
