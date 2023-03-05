@@ -50,9 +50,9 @@ export class AppComponent {
         this.productInfoList.push(productInfo);
       });
     });
-
+  }
   showInputNewItem = false;
-
+  
   openInputNewItem = () => {
     this.showInputNewItem = true;
 
