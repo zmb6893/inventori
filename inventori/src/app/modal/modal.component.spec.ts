@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { WeightConfirmationComponent } from './modal.component';
+import {MatCardModule} from '@angular/material/card';
 
-import { ModalComponent } from './modal.component';
-
-describe('ModalComponent', () => {
-  let component: ModalComponent;
-  let fixture: ComponentFixture<ModalComponent>;
+describe('WeightConfirmationComponent', () => {
+  let component: WeightConfirmationComponent;
+  let fixture: ComponentFixture<WeightConfirmationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModalComponent ]
+      declarations: [ WeightConfirmationComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ModalComponent);
+    fixture = TestBed.createComponent(WeightConfirmationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

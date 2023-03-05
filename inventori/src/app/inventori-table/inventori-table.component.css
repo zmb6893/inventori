@@ -1,0 +1,15 @@
+.mat-elevation-z8 {
+    box-shadow: none;
+}
+
+th {
+    font-family: "Bitter", serif;
+    font-weight: 700;
+    font-size: 1rem;
+    background-color: aqua;
+}
+
+td {
+    font-family: "Bitter", serif;
+    font-size: .9rem;
+}

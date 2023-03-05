@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
-import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
-  selector: 'app-modal',
+  selector: 'app-weight-confirmation',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css'],
+  styleUrls: ['./modal.component.css']
 })
+export class WeightConfirmationComponent {
+  weight: number = 0;
+  showingWeightBox: boolean = true;
 
-export class ModalComponent {
-  title: string | null = null;
-  constructor(public modalRef: MdbModalRef<ModalComponent>) { }
-
-  close(): void {
-    const closeMessage = "Modal cllosed";
-    this.modalRef.close(closeMessage);
+  exitWeightBox = () => {
+    this.showingWeightBox=false;
+    console.log(this.showingWeightBox)
   }
+  
 }
-
