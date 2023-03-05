@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/zmb6893/inventori#readme",
   "dependencies": {
+    "convert-csv-to-json": "^2.0.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "json2csv": "^6.0.0-alpha.2",
     "serialport": "^10.5.0"
   }
 }

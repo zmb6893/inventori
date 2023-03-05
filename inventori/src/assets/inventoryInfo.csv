@@ -1,0 +1,7 @@
+productInfo, initialQuantity, currentQuantity, quantityType
+Apples,12,10,wn
+Oranges,12,3,wn
+Potatoes,23,6,wn
+Flour,1600,1260,grams
+Spaghetti,450,185,grams
+Tofu,368,54,grams
