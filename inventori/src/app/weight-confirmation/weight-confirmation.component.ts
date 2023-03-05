@@ -13,5 +13,9 @@ export class WeightConfirmationComponent {
     this.showingWeightBox=false;
     console.log(this.showingWeightBox)
   }
+
+  getWeight = () => {
+    this.weight = this.weight+1;
+  }
   
 }
