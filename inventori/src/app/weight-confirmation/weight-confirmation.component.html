@@ -5,7 +5,7 @@
         </div>
         <mat-card-content>
             <div style="text-align: center;">
-                <h1>Weighing...</h1>
+                <h1>{{ weight ? "Weight is " : "Weighing..."}}</h1>
                 <h3>{{ weight }}</h3>
                 <button (click)="getWeight()">Get Weight</button>
                 <br><br>
