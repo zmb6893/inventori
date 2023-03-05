@@ -21,6 +21,7 @@ export class WeightConfirmationComponent {
     fetch(request).then(response=>response.json()).then((json)=>{
       this.weight = json.value;
       console.log(json.value);
+      this.getWeightClicked = false;
     });
   }
   
