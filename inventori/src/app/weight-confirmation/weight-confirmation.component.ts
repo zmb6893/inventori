@@ -19,6 +19,7 @@ export class WeightConfirmationComponent {
     let request = new Request('http://localhost:3000/get-weight');
     fetch(request).then(response=>response.json()).then((json)=>{
       this.weight = json.value;
+      console.log(json.value);
     });
   }
   

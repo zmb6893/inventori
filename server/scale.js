@@ -11,7 +11,7 @@ const port = new SerialPort({
 const parser = new ReadlineParser({delimiter: "\r\n"});
 port.pipe(parser);
 
-var latestRead = 0;
+var latestWeight = 0;
 
 function getRead(){
 
@@ -27,26 +27,32 @@ function getRead(){
     
         setTimeout(() => { port.close(function(){
             console.log("Port " + portName + "is close");
-            console.log("Lastest value: " + latestRead);
-            if (latestRead != 0){
-                resolve(latestRead);
+            console.log("Latest value: " + latestWeight);
+            if (latestWeight != 0){
+                resolve(latestWeight);
             }else{
                 reject("failed");
             }
-        })}, 10000);
+        })}, 3000);
 
     });
 
 }
 
 function onData(data){
-    latestRead += 1;
-    console.log(latestRead);
-    // console.log('Data:', data);
+    try{
+        //console.log(JSON.stringify(data, null, 4));
+        let value = Buffer.from(data)[0];
+        console.log(value);
+        latestWeight = value;
+    }catch(error){
+        console.error("Error: " + error);
+    }
+    
 }
 
 // application displays the scale amount while weighing
 // button to confirm the weight
 // that is the value that is added
 
-module.exports = { getRead }
+module.exports = { getRead, latestWeight }
