@@ -1,0 +1,23 @@
+{
+  "name": "inventori",
+  "version": "1.0.0",
+  "description": "An application that keeps track of a kitchen inventory and assists the user with creating their shopping list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zmb6893/inventori.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zmb6893/inventori/issues"
+  },
+  "homepage": "https://github.com/zmb6893/inventori#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "serialport": "^10.5.0"
+  }
+}
