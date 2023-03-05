@@ -18,4 +18,15 @@ export class InputNewItemComponent {
     this.useScale = !this.useScale;
     console.log(this.useScale)
   }
+
+  // send in body, header application/json
+  submitForm = () => {
+    let body = {
+      productName: (<HTMLInputElement>document.getElementById("itemName")).value,
+      currentQuantity: (<HTMLInputElement>document.getElementById("itemQuantity")).value,
+      initialQuantity: (<HTMLInputElement>document.getElementById("itemQuantity")).value,
+      limit: (<HTMLInputElement>document.getElementById("itemLimit")).value,
+    }
+    console.log(body);
+  }
 }

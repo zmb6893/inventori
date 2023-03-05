@@ -9,10 +9,11 @@
                 <h1>Add A New Item</h1>
 
                 <div class="item-inputs">
-                    <input type="text" name="item-name" placeholder="Item Name" id="item-name">
+                    <p></p>
+                    <input type="text" name="item-name" placeholder="Item Name" id="itemName">
                     <span>Check to use scale</span><input type="checkbox" (click)="toggleUseScale()">
                     <div *ngIf="!useScale">
-                        <input type="number" name="quantity" placeholder="0" id="item-quantity">
+                        <input type="number" name="quantity" placeholder="0" id="itemQuantity">
                         <select name="units"  id="item-units">
                             <option>g</option>
                             <option>oz</option>
@@ -22,11 +23,12 @@
                             <option>individual item</option>
                         </select>
                     </div>
+                    <input type="text" id="itemLimit" placeholder="Item Limit">
                 </div>
 
                 <div class="submission-btns">
-                <button id="cancel-btn">Cancel</button>
-                <button id="save-btn">Save</button>
+                    <button id="cancel-btn" (click)="exitInputItemBox()">Cancel</button>
+                    <button id="save-btn" (click)="submitForm()">Save</button>
                 </div>
             </div>
         </mat-card-content>
