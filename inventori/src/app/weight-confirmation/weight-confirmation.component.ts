@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class WeightConfirmationComponent {
   weight: number = 0;
   showingWeightBox: boolean = true;
+  getWeightClicked: boolean = false;
 
   exitWeightBox = () => {
     this.showingWeightBox=false;
@@ -15,7 +16,13 @@ export class WeightConfirmationComponent {
   }
 
   getWeight = () => {
-    this.weight = this.weight+1;
+    this.getWeightClicked = true
+    let request = new Request('http://localhost:3000/get-weight');
+    fetch(request).then(response=>response.json()).then((json)=>{
+      this.weight = json.value;
+      console.log(json.value);
+      this.getWeightClicked = false;
+    });
   }
   
 }
