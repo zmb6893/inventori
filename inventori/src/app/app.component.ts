@@ -18,15 +18,7 @@ export class AppComponent {
 
   title = 'inventori';
 
-  @Output() productInfoList : ItemCSV[] = [
-    {
-    'productName': 'potato',
-    'initialQuantity': 1,
-    'currentQuantity': 1,
-    'quantityType': 'c',
-    'limit': 0,
-  }
-];
+  @Output() productInfoList : ItemCSV[] = [];
 
   constructor(){
     this.ngOnInit();

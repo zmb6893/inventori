@@ -6,6 +6,7 @@ export interface Item {
   productName: string;
   quantityType: string;
   status: number;
+  limit: number;
 }
 
 var inventory: Item[] = [
@@ -25,7 +26,7 @@ var inventory: Item[] = [
 export class InventoriTableComponent {
   @Input() products: ItemCSV[] = [];
 
-  displayedColumns: string[] = ['productName', 'quantity', 'quantityType', 'status', 'add', 'use'];
+  displayedColumns: string[] = ['productName', 'quantity', 'limit', 'quantityType', 'status', 'add', 'use'];
   dataSource : Item[] = inventory;
 
   ngOnInit(){
@@ -43,11 +44,14 @@ export class InventoriTableComponent {
   pleaseWork = () => {
     let newArray: Item[]= [];
     this.products.forEach(i => {
+      console.log(i);
+      console.log(i.currentQuantity / i.limit);
       newArray.push({
         productName: i.productName, 
         quantity: i.currentQuantity, 
         quantityType: i.quantityType, 
-        status: i.currentQuantity / i.initialQuantity,
+        status: i.currentQuantity / i.limit,
+        limit: i.limit
       })
     });
     this.dataSource = newArray;

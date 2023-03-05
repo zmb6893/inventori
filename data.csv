@@ -1,6 +1,4 @@
 productName,initialQuantity,currentQuantity,quantityType,limit
-salt, 10, 10, g, 2
-pepper, 12, 2, g, 2
-mushrooms, 5, 3, c, 4
-test,11,11,1
-idk,1,1,1
+salt, 10, 10, grams, 2
+pepper, 12, 2, grams, 2
+mushrooms, 5, 3, count, 4
