@@ -30,10 +30,10 @@ export class InputNewItemComponent {
 
     fetch("http://localhost:3000/add-product", {
       "method": "POST",
-      headers: {
+      "headers": {
         'Content-Type': "application/json"
       },
-      'body': JSON.stringify(body)
+      "body": JSON.stringify(body)
     })
     console.log(body);
   }
