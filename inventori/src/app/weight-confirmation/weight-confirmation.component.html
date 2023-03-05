@@ -1,15 +1,16 @@
-<div *ngIf="showingWeightBox" style="padding-left: 30%; padding-right: 30%;">
+<div *ngIf="showingWeightBox" style="padding-left: 30%; padding-right: 30%; padding-bottom: 5%;">
     <mat-card>
         <div style="text-align: right;">
             <button (click)="exitWeightBox()">x</button>
         </div>
         <mat-card-content>
-            <div style="text-align: center;">
-                <h1>Weighing...</h1>
+            <div style="text-align: center; align-items: center; margin:auto">
+                <h1>{{ weight ? "Weight is " : "Weighing..."}}</h1>
+                <div style="max-width: fit-content; margin:auto;"><mat-spinner *ngIf="getWeightClicked"></mat-spinner></div>
                 <h3>{{ weight }}</h3>
-                <button (click)="getWeight()">Get Weight</button>
+                <button id="cancel-btn" (click)="getWeight()">Get Weight</button>
                 <br><br>
-                <button>Confirm Weight</button>
+                <button id="save-btn">Confirm Weight</button>
             </div>
         </mat-card-content>
     </mat-card>

@@ -9,19 +9,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StatusBarComponent } from './status-bar/status-bar.component';
 import { WeightConfirmationComponent } from './weight-confirmation/weight-confirmation.component';
 import { MatCardModule } from "@angular/material/card";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; 
+import { InputNewItemComponent } from './input-new-item/input-new-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InventoriTableComponent,
     StatusBarComponent,
-    WeightConfirmationComponent
+    WeightConfirmationComponent,
+    InputNewItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatTableModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     BrowserAnimationsModule,
   ],
   providers: [],

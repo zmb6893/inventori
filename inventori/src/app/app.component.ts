@@ -17,6 +17,7 @@ export interface ItemCSV {
 export class AppComponent {
 
   title = 'inventori';
+
   @Output() productInfoList : ItemCSV[] = [
     {
     'productName': 'potato',
@@ -49,5 +50,11 @@ export class AppComponent {
         this.productInfoList.push(productInfo);
       });
     });
+
+  showInputNewItem = false;
+
+  openInputNewItem = () => {
+    this.showInputNewItem = true;
+
   }
 }
