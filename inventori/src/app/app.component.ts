@@ -17,13 +17,15 @@ export interface ItemCSV {
 export class AppComponent {
 
   title = 'inventori';
-  @Output() productInfoList : ItemCSV[] = [{
+  @Output() productInfoList : ItemCSV[] = [
+    {
     'productName': 'potato',
     'initialQuantity': 1,
     'currentQuantity': 1,
     'quantityType': 'c',
     'limit': 0,
-  }];
+  }
+];
 
   constructor(){
     this.ngOnInit();
@@ -38,10 +40,10 @@ export class AppComponent {
       json.forEach((element: ItemCSV) => {
         let productInfo: ItemCSV = {
           'productName': element.productName,
-          'initialQuantity': element.initialQuantity,
-          'currentQuantity': element.currentQuantity,
+          'initialQuantity': Number(element.initialQuantity),
+          'currentQuantity': Number(element.currentQuantity),
           'quantityType': element.quantityType,
-          'limit': element.limit,
+          'limit': Number(element.limit),
           // 'status': element.currentQuantity / element.initialQuantity
         }
         this.productInfoList.push(productInfo);

@@ -28,31 +28,23 @@ export class InventoriTableComponent {
   displayedColumns: string[] = ['productName', 'quantity', 'quantityType', 'status', 'add', 'use'];
   dataSource : Item[] = inventory;
 
-  constructor(){
-    this.ngOnInit();
-  }
-  
-  ngOnLoad = () => {
-    
-  }
-
-
   ngOnInit(){
-    console.log("array: " + this.products);
+    console.log(this.products.length);
+    for (let i: number = 0; i < this.products.length; i++){
+      console.log(this.products[i]);
+    }
   
-    this.products.forEach(i => {
-      this.dataSource.push({
-        productName: i.productName, 
-        quantity: i.currentQuantity, 
-        quantityType: i.quantityType, 
-        status: i.currentQuantity / i.initialQuantity,
-      });
-      // console.log(i);
-    })
-    // this.dataSource = this.convertItemCSV();
+    // this.products.forEach(i => {
+    //   console.log(i);
+    //   this.dataSource.push({
+    //     productName: i.productName, 
+    //     quantity: i.currentQuantity, 
+    //     quantityType: i.quantityType, 
+    //     status: i.currentQuantity / i.initialQuantity,
+    //   });
+    // })
+    // console.log(this.dataSource);
   }
-
-  
 
   openAddModal = (item: any) => {
     console.log(this.products);
@@ -62,6 +54,19 @@ export class InventoriTableComponent {
   openUseModal = (item: any) => {
     console.log(`Adding to the item ${item.productName}`);
   };
+
+  pleaseWork = () => {
+    let newArray: Item[]= [];
+    this.products.forEach(i => {
+      newArray.push({
+        productName: i.productName, 
+        quantity: i.currentQuantity, 
+        quantityType: i.quantityType, 
+        status: i.currentQuantity / i.initialQuantity,
+      })
+    });
+    this.dataSource = newArray;
+  }
 
 }
 
