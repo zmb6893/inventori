@@ -32,6 +32,11 @@ app.post('/add-product', async (req, res) => {
   csv.addRow(req.body);
 });
 
+app.put('/increase-product', async (req, res) => {
+  console.log(req.body);
+  csv.updateRow(req.body["id"], req.body["weight"]);
+})
+
 app.listen(portName, () => {
   console.log(`Example app listening on port ${portName}`)
 });

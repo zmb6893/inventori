@@ -6,7 +6,8 @@ export interface ItemCSV {
   "initialQuantity": number,
   "currentQuantity": number,
   "quantityType": string,
-  "limit": number
+  "limit": number,
+  "id": number
 };
 
 @Component({
@@ -35,6 +36,7 @@ export class AppComponent {
           'currentQuantity': Number(element.currentQuantity),
           'quantityType': element.quantityType,
           'limit': Number(element.limit),
+          'id': Number(element.id),
           // 'status': element.currentQuantity / element.initialQuantity
         }
         this.products.push(product);

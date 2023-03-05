@@ -35,18 +35,19 @@
         <!-- Add Column -->
         <ng-container matColumnDef="add">
             <th mat-header-cell *matHeaderCellDef> Add </th>
-            <td mat-cell *matCellDef="let item"><button mat-button (click)="openAddModal(item)">+</button></td>
+            <td mat-cell *matCellDef="let item"><button mat-button (click)="openChangeModal(item, true)">+</button></td>
         </ng-container>
 
         <!-- Subtract Column -->
         <ng-container matColumnDef="use">
             <th mat-header-cell *matHeaderCellDef> Use </th>
-            <td mat-cell *matCellDef="let item"><button mat-button (click)="openUseModal(item)"> - </button></td>
+            <td mat-cell *matCellDef="let item"><button mat-button (click)="openChangeModal(item, false)"> - </button></td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>        
-      </table>
-      
-      
+      </table>      
+</div>
+<div *ngIf="changeQuantity && clickChange">
+  <app-change-quantity [adding]="adding" [id]="currentId"></app-change-quantity>
 </div>
