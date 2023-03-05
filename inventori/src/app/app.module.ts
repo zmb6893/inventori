@@ -13,7 +13,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { InputNewItemComponent } from './input-new-item/input-new-item.component';
 import { ChangeQuantityComponent } from './change-quantity/change-quantity.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
