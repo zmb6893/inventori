@@ -1,3 +1,7 @@
+* {
+    font-family: Bitter, sans-serif;
+}
+
 h1 {
     font-family: Dosis, sans-serif;
     font-weight: 600;
@@ -9,28 +13,62 @@ h1 {
     margin-bottom: 3rem;
 }
 
-.item-inputs {
-    display: grid;
-}
-
-#item-name {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    margin-top: 1rem;
-}
-
-#item-quantity {
-    grid-column: 1;
-}
-
-#item-units {
-    grid-column: 2;
-}
-
 input {
     border: 0;
     border-bottom: 1px solid black;
     margin: 0 0.75rem 1.5rem 0;
+}
+
+.item-inputs {
+    display: grid;
+    grid-template-columns: 2;
+}
+
+#item-name {
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    /* grid-area: name; */
+    margin-top: 1rem;
+}
+
+#item-quantity {
+    width: 3rem;
+    /* grid-column-start: 1; */
+    /* grid-area: quantity; */
+}
+
+#item-units {
+    /* grid-column-start: 2; */
+    /* grid-area: units; */
+}
+
+#limit {
+    display: flex;
+    margin: 1rem 0;
+}
+
+#item-limit {
+    width: 3rem;
+    margin: 0 0.5rem;
+}
+
+#scale {
+    display: flex;
+    margin: 1.25rem 0;
+}
+
+#scale-cb {
+    margin: 0.25rem 0.5rem;
+}
+
+#x-btn {
+    margin: 0.5rem;
+    border: none;
+    font-weight: 700;
+    font-family: Dosis, sans-serif;
+    font-size: 1rem;
+    background-color: transparent;
+    color: rgb(70, 70, 70);
 }
 
 .submission-btns {
