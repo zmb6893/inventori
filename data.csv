@@ -1,0 +1,4 @@
+productName,initialQuantity,currentQuantity,quantityType,limit
+salt, 10, 10, g, 2
+pepper, 12, 2, g, 2
+mushrooms, 5, 3, c, 4

@@ -1,10 +1,34 @@
 const fs = require("fs");
-const {parse} = require("csv-parse");
-
+const { stringify } = require("csv-stringify");
 const csvToJson = require('convert-csv-to-json');
 
+const filename = '../data.csv';
+
 function getAllRows(){
-    return csvToJson.fieldDelimiter(',').getJsonFromCsv("../data.csv");
+    return csvToJson.fieldDelimiter(',').getJsonFromCsv(filename);
+}
+
+function addRow(data){
+    // productName, initialQuantity, type, limit
+    // const writableStream = fs.createWriteStream(".");
+
+    // const columns = [
+    //     "productName",
+    //     "initialQuantity",
+    //     "currentQuantity",
+    //     "quantityType",
+    //     "limit"
+    // ];
+
+    // const stringifer = stringify({header: false, columns: columns});
+    // create a Buffer from data
+    stringify(someData, {
+        header: false
+    }, function (err, output) {
+        fs.writeFile(filename, output);
+    });
+
+    
 }
 
 
