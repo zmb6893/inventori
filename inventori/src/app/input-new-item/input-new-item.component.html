@@ -10,15 +10,18 @@
 
                 <div class="item-inputs">
                     <input type="text" name="item-name" placeholder="Item Name" id="item-name">
-                    <input type="number" name="quantity" placeholder="0" id="item-quantity">
-                    <select name="units"  id="item-units">
-                        <option>g</option>
-                        <option>oz</option>
-                        <option>ml</option>
-                        <option>fl oz</option>
-                        <option>cups</option>
-                        <option>individual item</option>
-                    </select>
+                    <span>Check to use scale</span><input type="checkbox" (click)="toggleUseScale()">
+                    <div *ngIf="!useScale">
+                        <input type="number" name="quantity" placeholder="0" id="item-quantity">
+                        <select name="units"  id="item-units">
+                            <option>g</option>
+                            <option>oz</option>
+                            <option>ml</option>
+                            <option>fl oz</option>
+                            <option>cups</option>
+                            <option>individual item</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="submission-btns">
@@ -28,4 +31,8 @@
             </div>
         </mat-card-content>
     </mat-card>
+</div>
+
+<div *ngIf="useScale">
+    <app-weight-confirmation></app-weight-confirmation>      
 </div>

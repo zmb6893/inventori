@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'inventori';
+  showInputNewItem = false;
+
+  openInputNewItem = () => {
+    this.showInputNewItem = true;
+  }
 }
