@@ -1,13 +1,13 @@
 <div *ngIf="showModal" style="padding-left: 30%; padding-right: 30%; padding-bottom: 5%;">
     <mat-card>
         <div style="text-align: right;">
-            <button (click)="exit()">x</button>
+            <button (click)="exit()" id="x-btn">X</button>
         </div>
         <mat-card-content>
             <div style="text-align: center; align-items: center; margin:auto">
                 <h1>{{ adding ? 'Adding' : 'Removing' }}</h1>
                 <p>Manual Input or click Use Scale</p>
-                <button id="modify-quantity" (click)="openWeightModal()">Use Scale</button>
+                <button id="modify-quantity" (click)="openWeightModal()" >Use Scale</button>
             </div>
         </mat-card-content>
     </mat-card>
