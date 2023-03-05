@@ -14,8 +14,10 @@ export class WeightConfirmationComponent {
     console.log(this.showingWeightBox)
   }
 
-  getWeight = () => {
-    this.weight = this.weight+1;
+  getWeight = async () => {
+    //this.weight = this.weight+1;
+    let request = new Request('http://localhost:3000/get-weight');
+    this.weight = await fetch(request).then(response=>(Number(response)))
   }
   
 }
