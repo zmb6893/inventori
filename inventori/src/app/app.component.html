@@ -8,8 +8,9 @@
 
 <div class="content" role="main">
   <span>Inventori Content</span>
+  <div style="padding-left: 3%;"><button id="add-item" (click)="openInputNewItem()">Add new item</button></div>
   <app-inventori-table></app-inventori-table>
-  <app-weight-confirmation></app-weight-confirmation>
+  <app-input-new-item *ngIf="showInputNewItem"></app-input-new-item>
 </div>
 
 <router-outlet></router-outlet>
