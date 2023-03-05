@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import { ItemCSV } from '../app.component';
 
 export interface Item {
@@ -6,6 +6,7 @@ export interface Item {
   productName: string;
   quantityType: string;
   status: number;
+  limit: number;
 }
 
 var inventory: Item[] = [
@@ -15,35 +16,27 @@ var inventory: Item[] = [
   // {productName: 'Potatoes', quantity: 3, quantityType: 'Whole Number', status: .75},
 ];
 
-
-
 @Component({
   selector: 'app-inventori-table',
   templateUrl: './inventori-table.component.html',
   styleUrls: ['./inventori-table.component.css']
 })
-export class InventoriTableComponent {
+export class InventoriTableComponent implements OnChanges {
   @Input() products: ItemCSV[] = [];
-
-  displayedColumns: string[] = ['productName', 'quantity', 'quantityType', 'status', 'add', 'use'];
+  
+  displayedColumns: string[] = ['productName', 'quantity', 'limit', 'quantityType', 'status', 'add', 'use'];
   dataSource : Item[] = inventory;
 
+  constructor(){
+    this.ngOnInit();
+  }
+
   ngOnInit(){
-    console.log(this.products.length);
-    for (let i: number = 0; i < this.products.length; i++){
-      console.log(this.products[i]);
-    }
-  
-    // this.products.forEach(i => {
-    //   console.log(i);
-    //   this.dataSource.push({
-    //     productName: i.productName, 
-    //     quantity: i.currentQuantity, 
-    //     quantityType: i.quantityType, 
-    //     status: i.currentQuantity / i.initialQuantity,
-    //   });
-    // })
-    // console.log(this.dataSource);
+    this.pleaseWork();
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    this.pleaseWork();
   }
 
   openAddModal = (item: any) => {
@@ -52,7 +45,7 @@ export class InventoriTableComponent {
   };
 
   openUseModal = (item: any) => {
-    console.log(`Adding to the item ${item.productName}`);
+    console.log(`Using the item ${item.productName}`);
   };
 
   pleaseWork = () => {
@@ -62,7 +55,8 @@ export class InventoriTableComponent {
         productName: i.productName, 
         quantity: i.currentQuantity, 
         quantityType: i.quantityType, 
-        status: i.currentQuantity / i.initialQuantity,
+        status: i.currentQuantity / i.limit,
+        limit: i.limit
       })
     });
     this.dataSource = newArray;

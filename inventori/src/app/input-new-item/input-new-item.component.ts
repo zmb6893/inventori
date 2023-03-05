@@ -18,4 +18,24 @@ export class InputNewItemComponent {
     this.useScale = !this.useScale;
     console.log(this.useScale)
   }
+
+  // send in body, header application/json
+  submitForm = () => {
+    let test = {
+      productName: (<HTMLInputElement>document.getElementById("itemName")).value,
+      currentQuantity: Number((<HTMLInputElement>document.getElementById("itemQuantity")).value),
+      initialQuantity: Number((<HTMLInputElement>document.getElementById("itemQuantity")).value),
+      limit: Number((<HTMLInputElement>document.getElementById("itemLimit")).value),
+    }
+
+
+    fetch(new Request("http://localhost:3000/add-product"), {
+      "method": "POST",
+      "headers": {
+        'Content-Type': "application/json"
+      },
+      "body": JSON.stringify(test)
+    });
+
+  }
 }

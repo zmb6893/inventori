@@ -4,6 +4,8 @@ const portName = 3000
 
 const cors = require('cors');
 app.use(cors());
+app.use(express.json());
+
 
 const scale = require('./scale');
 const csv = require('./csv');
@@ -24,6 +26,10 @@ app.get('/get-weight', (req, res) => {
 
 app.get('/product-list', (req, res) => {
   res.send(csv.getAllRows());
+});
+
+app.post('/add-product', async (req, res) => {
+  csv.addRow(req.body);
 });
 
 app.listen(portName, () => {
