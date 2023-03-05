@@ -6,6 +6,7 @@ const cors = require('cors');
 app.use(cors());
 
 const scale = require('./scale');
+const csv = require('./csv');
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -19,6 +20,10 @@ app.get('/get-weight', (req, res) => {
     .catch((error) => {
         res.send("does not work");
     });
+});
+
+app.get('/product-list', (req, res) => {
+  res.send(csv.getAllRows());
 });
 
 app.listen(portName, () => {
