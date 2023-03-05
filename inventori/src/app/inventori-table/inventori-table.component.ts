@@ -26,6 +26,10 @@ export class InventoriTableComponent implements OnChanges {
   
   displayedColumns: string[] = ['productName', 'quantity', 'limit', 'quantityType', 'status', 'add', 'use'];
   dataSource : Item[] = inventory;
+  changeQuantity: boolean = false;
+  adding: boolean = true;
+  currentId: number = 0;
+  clickChange: boolean = false;
 
   constructor(){
     this.ngOnInit();
@@ -39,9 +43,13 @@ export class InventoriTableComponent implements OnChanges {
     this.pleaseWork();
   }
 
-  openAddModal = (item: any) => {
-    console.log(this.products);
-    console.log(`Adding to the item ${item.productName}`);
+  openChangeModal = (item: any, adding: boolean) => {
+    this.clickChange = true;
+    //console.log(this.products);
+    this.adding = adding;
+    console.log(`${adding? 'Adding to ' : 'Subtracting from '}the item ${item.productName}`);
+    this.changeQuantity = true;
+    this.currentId = item.id;
   };
 
   openUseModal = (item: any) => {
