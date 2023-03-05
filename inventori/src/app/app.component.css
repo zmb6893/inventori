@@ -3,7 +3,16 @@
     background-color: #006400;
     color: white;
     font-family: "Dosis", sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     border-radius: 1.25rem;
     padding: .5rem 1.2rem;
+    border: none;
+}
+
+#add-item:hover {
+    background-color: #003d00;
+}
+
+#add-item:active {
+    background-color: #018b01;
 }

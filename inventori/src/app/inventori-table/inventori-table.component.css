@@ -5,4 +5,15 @@
     font-size: 1rem;
     border-radius: 1.25rem;
     padding: .5rem 1.2rem;
+    border: none;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+#add-item:hover {
+    background-color: #003d00;
+}
+
+#add-item:active {
+    background-color: #018b01;
 }

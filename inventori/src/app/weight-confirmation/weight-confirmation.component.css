@@ -4,62 +4,49 @@ h1 {
     color: #006400;
 }
 
-.input-table {
-    padding: 0 25px;
-    margin-bottom: 3rem;
+h3 {
+    font-family: Bitter;
 }
 
-.item-inputs {
-    display: grid;
+#x-btn {
+    margin: 0.5rem;
+    border: none;
+    font-weight: 700;
+    font-family: Dosis, sans-serif;
+    font-size: 1rem;
+    background-color: transparent;
+    color: rgb(70, 70, 70);
 }
 
-#item-name {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    margin-top: 1rem;
-}
-
-#item-quantity {
-    grid-column: 1;
-}
-
-#item-units {
-    grid-column: 2;
-}
-
-input {
-    border: 0;
-    border-bottom: 1px solid black;
-    margin: 0 0.75rem 1.5rem 0;
-}
-
-.submission-btns {
+.btn-group {
     text-align: center;
     margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
 }
 
-#cancel-btn, #save-btn {
+#get-weight-btn, #confirm-btn {
     appearance: none;
     border: none;
     background-color: transparent;
-    margin: 0 0.5rem;
+    margin: .75rem;
 }
 
-#save-btn {
+#confirm-btn {
     background-color: #006400;
     color: white;
     font-family: "Dosis", sans-serif;
     font-size: 1rem;
     border-radius: 1.25rem;
-    padding: .5rem 1.2rem;
+    padding: .25rem 1rem;
 }
 
-#cancel-btn {
+#get-weight-btn {
     color: #006400;
     background-color: white;
     font-family: "Dosis", sans-serif;
     font-size: 1rem;
     border: 0.5px solid #006400;
     border-radius: 1.25rem;
-    padding: .5rem .75rem;
+    padding: .25rem .75rem;
 }
