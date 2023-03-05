@@ -1,7 +1,7 @@
-<div style="padding-left: 30%; padding-right: 30%;">
+<div *ngIf="showingWeightBox" style="padding-left: 30%; padding-right: 30%;">
     <mat-card>
         <div style="text-align: right;">
-            <button>x</button>
+            <button (click)="exitWeightBox()">x</button>
         </div>
         <mat-card-content>
             <div style="text-align: center;">

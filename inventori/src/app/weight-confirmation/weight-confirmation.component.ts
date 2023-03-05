@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class WeightConfirmationComponent {
   weight: number = 0;
+  showingWeightBox: boolean = true;
+
+  exitWeightBox = () => {
+    this.showingWeightBox=false;
+    console.log(this.showingWeightBox)
+  }
+  
 }
