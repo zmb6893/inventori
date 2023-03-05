@@ -7,6 +7,7 @@ export interface Item {
   quantityType: string;
   status: number;
   limit: number;
+  id: number;
 }
 
 var inventory: Item[] = [
@@ -64,7 +65,8 @@ export class InventoriTableComponent implements OnChanges {
         quantity: i.currentQuantity, 
         quantityType: i.quantityType, 
         status: i.currentQuantity / i.limit,
-        limit: i.limit
+        limit: i.limit,
+        id: i.id
       })
     });
     this.dataSource = newArray;

@@ -26,7 +26,7 @@ export class ChangeQuantityComponent {
       "weight": this.weight,
     }
 
-    fetch(new Request(this.adding ? "http://localhost:3000/increase-product" : "http://localhost:3000/decrease-product"), {
+    fetch(new Request("http://localhost:3000/increase-product"), {
       "method": "PUT",
       "headers": {
         'Content-Type': "application/json"
@@ -38,5 +38,6 @@ export class ChangeQuantityComponent {
   newWeight = (weight: Number) => {
     this.weight = weight;
     console.log(this.weight)
+    this.modifyWeight();
   }
 }
