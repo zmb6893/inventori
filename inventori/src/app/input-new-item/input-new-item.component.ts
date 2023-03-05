@@ -27,6 +27,14 @@ export class InputNewItemComponent {
       initialQuantity: (<HTMLInputElement>document.getElementById("itemQuantity")).value,
       limit: (<HTMLInputElement>document.getElementById("itemLimit")).value,
     }
+
+    fetch("http://localhost:3000/add-product", {
+      "method": "POST",
+      headers: {
+        'Content-Type': "application/json"
+      },
+      'body': JSON.stringify(body)
+    })
     console.log(body);
   }
 }
