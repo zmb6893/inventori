@@ -7,17 +7,21 @@ import { AppComponent } from './app.component';
 import { InventoriTableComponent } from './inventori-table/inventori-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StatusBarComponent } from './status-bar/status-bar.component';
+import { WeightConfirmationComponent } from './weight-confirmation/weight-confirmation.component';
+import { MatCardModule } from "@angular/material/card";
 
 @NgModule({
   declarations: [
     AppComponent,
     InventoriTableComponent,
-    StatusBarComponent
+    StatusBarComponent,
+    WeightConfirmationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatTableModule,
+    MatCardModule,
     BrowserAnimationsModule,
   ],
   providers: [],
